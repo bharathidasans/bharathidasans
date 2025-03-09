@@ -17,7 +17,7 @@ const Weather = (params) => {
       setInput("");
       setWeather({ ...weather, loading: true });
       const url = "https://api.openweathermap.org/data/2.5/weather";
-      const api_key = 'f00c38e0279b7bc85480c3fe775d518c';
+      const api_key = "f00c38e0279b7bc85480c3fe775d518c";
       await axios
         .get(url, { params: { q: input, units: "metric", appid: api_key } })
         .then((res) =>
@@ -41,7 +41,11 @@ const Weather = (params) => {
         placeholder="Enter city name"
         onKeyDown={Search}
       />
-      <WeatherDetails cityData={weather} />
+      <br />
+      <br />
+      <div className="weatherDetailsContainer">
+        <WeatherDetails cityData={weather} />
+      </div>
     </div>
   );
 };

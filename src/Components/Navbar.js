@@ -12,17 +12,27 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-// import { useNavigate } from "react-router-dom";
 import { LocalMallOutlined } from "@mui/icons-material";
 import { Badge } from "@mui/material";
+import { useNavigate } from "react-router";
 // import { useSelector } from "react-redux";
 
-const pages = ["Home", "Map", "Price", "Weather","LoginForm","Posts","Album","Counter","Dashboard"];
+const pages = [
+  "Home",
+  "Map",
+  "Price",
+  "Weather",
+  "LoginForm",
+  "Posts",
+  "Album",
+  "Counter",
+  "Dashboard",
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
-//   let navigate = useNavigate();
-  const { quantity } = 1;//useSelector(store => store.cart);
+  let navigate = useNavigate();
+  const { quantity } = 1; //useSelector(store => store.cart);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -37,7 +47,7 @@ const Navbar = () => {
   const handleCloseNavMenu = (evt) => {
     let name = evt.currentTarget.innerText;
     name = name.toString().toLowerCase();
-    // navigate(`/${name}`);
+    navigate(`/${name}`);
     setAnchorElNav(null);
   };
 
@@ -47,8 +57,8 @@ const Navbar = () => {
 
   const handleOpenCart = () => {
     // navigate('/cart');
-  }
-  
+  };
+
   return (
     <>
       <AppBar position="fixed">
@@ -152,7 +162,7 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/logo512.png" />
+                  <Avatar alt="Remy Sharp" sx={{color:"blue"}} />
                 </IconButton>
               </Tooltip>
               <Menu
